@@ -20,8 +20,8 @@ public:
     Address() {
         std::string city = "unknown";
         std::string street = "unknown";
-        int building = 0;
-        int flat = 0;
+        this->building = 0;
+        this->flat = 0;
     }
     std::string get_output_address() {
         std::string build_str = std::to_string(building);
@@ -59,7 +59,7 @@ int main() {
         adr_arr[i] = Address(city, street, building, flat);
     }
     
-    adr_arr->sort(adr_arr, size);
+    Address::sort(adr_arr, size);
 
     for (int i = 0; i < size; i++) {
         out << adr_arr[i].get_output_address();
